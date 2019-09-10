@@ -300,7 +300,7 @@ public class LocationPlugin implements MethodCallHandler, StreamHandler, PluginR
                     // Parse altitude above sea level, Detailed description of NMEA string here
                     // http://aprs.gids.nl/nmea/#gga
                     if (type.startsWith("$GPGGA")) {
-                        if (!tokens[9].isEmpty()) {
+                        if (tokens.length >= 9 && !tokens[9].isEmpty()) {
                             mLastMslAltitude = Double.parseDouble(tokens[9]);
                         }
                     }
